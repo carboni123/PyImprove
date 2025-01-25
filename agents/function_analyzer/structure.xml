@@ -1,0 +1,40 @@
+<structure>
+    <!-- Repeat this block for each function analyzed -->
+    <function_analysis>
+        <function_name>example_function</function_name>
+        <line_number>10</line_number>
+        
+        <identified_issues>
+            <!-- List each identified issue inside an <issue> element -->
+            <issue>
+                <type>logic_bug</type>
+                <description>Bug description or details.</description>
+            </issue>
+            <issue>
+                <type>code_smell</type>
+                <description>Example of non-idiomatic Python usage.</description>
+            </issue>
+        </identified_issues>
+        
+        <actionable_suggestions>
+            <!-- Provide clear, specific suggestions to address issues or enhance the function -->
+            <suggestion>
+                <description>Refactor the nested loops to use list comprehension.</description>
+            </suggestion>
+            <suggestion>
+                <description>Use descriptive variable names for improved readability.</description>
+            </suggestion>
+        </actionable_suggestions>
+        
+        <highlighted_best_practices>
+            <!-- Note any best practices already being followed, or recognized successes -->
+            <practice>
+                <description>Proper use of docstrings following PEP 257.</description>
+            </practice>
+            <practice>
+                <description>Effective handling of edge cases using try/except blocks.</description>
+            </practice>
+        </highlighted_best_practices>
+        
+    </function_analysis>
+</structure>

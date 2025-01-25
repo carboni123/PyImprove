@@ -1,0 +1,18 @@
+<functions>
+    <action>
+        <type>create_file</type>
+        <file_path>example.txt</file_path>
+        <file_contents><![CDATA[This is an example file.]]></file_contents>
+    </action>
+    
+    <action>
+        <type>edit_file</type>
+        <file_path>example.txt</file_path>
+        <file_contents><![CDATA[Updated contents of the example file.]]></file_contents>
+    </action>
+    
+    <action>
+        <type>delete_file</type>
+        <file_path>example.txt</file_path>
+    </action>
+</functions>
