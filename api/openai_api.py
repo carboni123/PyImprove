@@ -1,9 +1,11 @@
 # api/openai_api.py
 import asyncio
 from api.api import API
+from api import register_api
 from openai import OpenAI
 
 
+@register_api("openai")
 class OpenAIAPI(API):
     """
     Concrete class for interactions with the OpenAI API.

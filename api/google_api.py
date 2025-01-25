@@ -2,9 +2,10 @@
 import os
 import re
 from api.api import API
+from api import register_api
 import google.generativeai as genai
 
-
+@register_api("google")
 class GoogleAPI(API):
     """
     Concrete class for interactions with the Google API.

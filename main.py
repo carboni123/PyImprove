@@ -1,32 +1,16 @@
 # main.py
-from agents.function_analyzer.function_analyzer import FunctionAnalyzer
-from agents.function_editor.function_editor import FunctionEditorAgent
-from api.deepseek_api import DeepSeekAPI
-from api.openai_api import OpenAIAPI
-from api.google_api import GoogleAPI
-from api.mock_api import MockAPI
-from gitpython import GitRepo
 import argparse
 import os
 import logging
-import ast
+from agents.function_analyzer.function_analyzer import FunctionAnalyzer
+from agents.function_editor.function_editor import FunctionEditorAgent
+from gitpython import GitRepo
+from api import create_api_instance
+
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
-
-
-def create_api_instance(api_type, api_key):
-    if api_type == "openai":
-        return OpenAIAPI(api_key=api_key)
-    elif api_type == "deepseek":
-        return DeepSeekAPI(api_key=api_key)
-    elif api_type == "google":
-        return GoogleAPI(api_key=api_key)
-    elif api_type == "mock":
-        return MockAPI(api_key=api_key)
-    else:
-        raise ValueError(f"Invalid API type: {api_type}")
 
 
 def parse_actions(actions, repo):
@@ -73,7 +57,7 @@ def main():
 
     script_path = args.input_script
     directory = os.path.dirname(script_path)
-
+    directory = os.path.abspath(os.path.dirname(script_path))
     if not os.path.exists(script_path):
         raise ValueError
 
