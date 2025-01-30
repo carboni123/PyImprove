@@ -46,7 +46,7 @@ def main():
         "--api",
         type=str,
         default="google",
-        choices=["deepseek", "openai", "google", "mock"],
+        choices=["deepseek", "openai", "google", "alibaba-qwen", "mock"],
         help="API to use (openai, google)",
     )
     parser.add_argument("--api_key", type=str, help="API key for the selected API")
